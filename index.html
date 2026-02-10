@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Mirror</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Webcam Feed (full screen, behind everything) -->
+    <video id="webcam" autoplay playsinline muted></video>
+
+    <!-- GIF Overlay Layer 1 -->
+    <img id="overlay-gif-1" src="" alt="emotion overlay 1">
+
+    <!-- GIF Overlay Layer 2 -->
+    <img id="overlay-gif-2" src="" alt="emotion overlay 2">
+
+    <!-- Emotion Display -->
+    <div id="emotion-display">
+        <span id="emotion-icon">( • _ • )</span>
+        <span id="emotion-text">Neutral</span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading emotion detection...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" style="display: none;"></div>
+
+    <!-- Scripts - NO defer, placed at bottom so DOM is ready -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.min.js"></script>
+    <script src="main.js"></script>
+</body>
+<div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); 
+            text-align: center; z-index: 10; color: white; 
+            background: rgba(0,0,0,0.7); padding: 15px 30px; border-radius: 15px;">
+    <h1 style="margin: 0; font-size: 28px;"> ݁⋆⭒˚.⋆ Emotion Mirror ( ᴗ͈ˬᴗ͈)ഒ</h1>
+    <p style="margin: 5px 0 0 0; font-size: 14px;">What will you be today?!</p>
+</div>
+</html>
